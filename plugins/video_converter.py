@@ -47,8 +47,6 @@ async def rename_doc(bot, update):
                 )
             )
             return
-    TRChatBase(update.from_user.id, update.text, "video")
-    if update.reply_to_message is not None:
         description = Translation.CUSTOM_CAPTION_UL_FILE
         download_location = Config.DOWNLOAD_LOCATION + "/"
         a = await bot.send_message(
