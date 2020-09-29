@@ -34,11 +34,8 @@ from PIL import Image
 @pyrogram.Client.on_message(pyrogram.Filters.command(["c2v"]))
 async def convert_to_video(bot, update):
     if update.from_user.id in Config.BANNED_USERS:
-        await bot.send_message(
-            chat_id=update.chat.id,
-            text=Translation.BANNED_USER_TEXT,
-            reply_to_message_id=update.message_id
-        )
+        await update.reply_text("You are B A N N E D")
+        return
         TRChatBase(update.from_user.id, update.text, "c2v")
     if (" " in update.text) and (update.reply_to_message is not None):
         cmd, file_name = update.text.split(" ", 1)
