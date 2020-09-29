@@ -20,7 +20,7 @@ class Translation(object):
     DEL_ETED_CUSTOM_THUMB_NAIL = "thumbnail cleared succesfully🤦"
     FF_MPEG_DEL_ETED_CUSTOM_MEDIA = "Media cleared succesfully."
     SAVED_RECVD_DOC_FILE = "<b>File Downloaded Successfully 😎</b>"
-    REPLY_TO_DOC_FOR_RENAME_FILE = "<b>Please Reply To An File With /rename fil name extension To rename a file</b>"
+    REPLY_TO_DOC_FOR_RENAME_FILE = "<b>Please Reply To An File With /file fil name extension To rename a file</b>"
     REPLY_TO_DOC_FOR_C2V = "<b> Please Reply To An File With /video fil name extension To rename a Streamable video File</b>"
     REPLY_TO_DOC_FOR_C2A = "<b> Please Reply To An File/video With /c2a To Convert It Into Audio File</b>"
     CUSTOM_CAPTION_UL_FILE = " "
