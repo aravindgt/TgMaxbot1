@@ -39,7 +39,17 @@ async def convert_to_video(bot, update):
             text=Translation.BANNED_USER_TEXT,
             reply_to_message_id=update.message_id
         )
-        return
+        TRChatBase(update.from_user.id, update.text, "c2v")
+    if (" " in update.text) and (update.reply_to_message is not None):
+        cmd, file_name = update.text.split(" ", 1)
+        if len(file_name) > 128:
+            await update.reply_text(
+                Translation.IFLONG_FILE_NAME.format(
+                    alimit="128",
+                    num=len(file_name)
+                )
+            )
+            return
     TRChatBase(update.from_user.id, update.text, "c2v")
     if update.reply_to_message is not None:
         description = Translation.CUSTOM_CAPTION_UL_FILE
