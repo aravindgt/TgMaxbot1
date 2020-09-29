@@ -114,7 +114,7 @@ async def convert_to_video(bot, update):
             await bot.send_video(
                 chat_id=update.chat.id,
                 video=the_real_download_location,
-                caption=description,
+                caption=f"<b>{file_name}\n\nShare and Support\n\n@SerialCoIn</b>",
                 duration=duration,
                 width=width,
                 height=height,
@@ -131,7 +131,7 @@ async def convert_to_video(bot, update):
             )
             try:
                 os.remove(the_real_download_location)
-              #  os.remove(thumb_image_path)
+                os.remove(thumb_image_path)
             except:
                 pass
             await bot.edit_message_text(
