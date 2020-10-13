@@ -31,12 +31,12 @@ from hachoir.parser import createParser
 from PIL import Image
 
 
-@pyrogram.Client.on_message(pyrogram.Filters.command(["renamev"]))
+@pyrogram.Client.on_message(pyrogram.Filters.command(["rename_video"]))
 async def rename_doc(bot, update):
     if update.from_user.id in Config.BANNED_USERS:
         await update.reply_text("You are B A N N E D")
         return
-        TRChatBase(update.from_user.id, update.text, "renamev")
+        TRChatBase(update.from_user.id, update.text, "rename_video")
     if (" " in update.text) and (update.reply_to_message is not None):
         cmd, file_name = update.text.split(" ", 1)
         if len(file_name) > 128:
@@ -71,26 +71,28 @@ async def rename_doc(bot, update):
                 chat_id=update.chat.id,
                 message_id=a.message_id
             )
-            # don't care about the extension
-           # await bot.edit_message_text(
-              #  text=Translation.UPLOAD_START,
-             #   chat_id=update.chat.id,
-            #    message_id=a.message_id
-          #  )
+             #don't care about the extension
+            new_file_name = download_location + file_name
+            os.rename(the_real_download_location, new_file_name)
+            await bot.edit_message_text(
+                text=Translation.UPLOAD_START,
+                chat_id=update.chat.id,
+                message_id=a.message_id
+            )
             logger.info(the_real_download_location)
             # get the correct width, height, and duration for videos greater than 10MB
             # ref: message from @BotSupport
             width = 0
             height = 0
             duration = 0
-            metadata = extractMetadata(createParser(the_real_download_location))
+            metadata = extractMetadata(createParser(new_file_name))
             if metadata.has("duration"):
                 duration = metadata.get('duration').seconds
             thumb_image_path = Config.DOWNLOAD_LOCATION + "/" + str(update.from_user.id) + ".jpg"
             if not os.path.exists(thumb_image_path):
                 thumb_image_path = await take_screen_shot(
-                    the_real_download_location,
-                    os.path.dirname(the_real_download_location),
+                    new_file_name,
+                    os.path.dirname(new_file_name),
                     random.randint(
                         0,
                         duration - 1
@@ -118,7 +120,7 @@ async def rename_doc(bot, update):
             c_time = time.time()
             await bot.send_video(
                 chat_id=update.chat.id,
-                video=the_real_download_location,
+                video=new_file_name,
                 caption=f"<b>{file_name}\n\nShare and Support\n\n@SerialCoIn</b>",
                 duration=duration,
                 width=width,
@@ -135,7 +137,7 @@ async def rename_doc(bot, update):
                 )
             )
             try:
-                os.remove(the_real_download_location)
+                os.remove(new_file_name)
                 #os.remove(thumb_image_path)
             except:
                 pass
