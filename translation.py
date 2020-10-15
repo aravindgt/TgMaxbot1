@@ -33,4 +33,4 @@ class Translation(object):
 1.🔹 <b>Send me any Telegram File.</b> \n
 2.🔹 <b>Reply to that message with /rename New file name.extnsion</b> \n
 3.🔹 <b> Send A Photo to make it as permanent Thumbnail</b> \n
-4.🔹 <b>Reply to that message with /renamev New file name.extnsion For videos</b>"""
+4.🔹 <b>Reply to that message with /rename_video or /rename_video1 New file name.extnsion For videos</b>"""
