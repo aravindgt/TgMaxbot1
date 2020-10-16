@@ -71,7 +71,7 @@ async def generate_screen_shot(bot, update):
                 tmp_directory_for_each_user,
                 False,
                 Config.DEF_WATER_MARK_FILE,
-                5,
+                300,
                 9
             )
             logger.info(images)
