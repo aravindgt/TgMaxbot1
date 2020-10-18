@@ -27,7 +27,6 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 from helper_funcs.chat_base import TRChatBase
 from helper_funcs.help_Nekmo_ffmpeg import generate_screen_shots
 from helper_funcs.display_progress import progress_for_pyrogram
-from import screenshot
 
 
 @ScreenShotBot.on_message(Filters.private &  Filters.command("watermark"))
