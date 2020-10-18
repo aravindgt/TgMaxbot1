@@ -29,7 +29,7 @@ from helper_funcs.help_Nekmo_ffmpeg import generate_screen_shots
 from helper_funcs.display_progress import progress_for_pyrogram
 
 
-@ScreenShotBot.on_message(Filters.private &  Filters.command("watermark"))
+@pyrogram.on_message(Filters.private &  Filters.command("watermark"))
 async def _(c, m):
     
     if not await c.db.is_user_exist(m.chat.id):
