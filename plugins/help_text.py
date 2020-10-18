@@ -45,6 +45,7 @@ async def help_user(bot, update):
     await bot.send_message(
         chat_id=update.chat.id,
         text=Translation.HELP_USER,
+        parse_mode="html",
         reply_to_message_id=update.message_id
     )
 
@@ -67,6 +68,7 @@ async def start(bot, update):
     await bot.send_message(
         chat_id=update.chat.id,
         text=Translation.START_TEXT.format(update.from_user.first_name),
+        parse_mode="html",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
