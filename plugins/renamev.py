@@ -100,9 +100,9 @@ async def rename_video(bot, update):
             thumb_image_path = Config.DOWNLOAD_LOCATION + "/" + str(update.from_user.id) + ".jpg"
             if not os.path.exists(thumb_image_path):
                try:
-                    thumb_image_path = await take_screen_shot(new_file_name, os.path.dirname(new_file_name))
-               except:
-                    thumb_image_path = None
+                    thumb_image_path = await take_screen_shot(new_file_name, os.path.dirname(new_file_name), random.randint(0, duration - 1))
+               #except:
+                    #thumb_image_path = None
             else:
                 width = 0
                 height = 0
