@@ -1,7 +1,7 @@
 class Translation(object):
     START_TEXT = """ <b> Hi {} , I'm A Simple File Renamer for File and Video Bot With Permanent Thumbnail support!💯</b> \n
 
-<b>Bot Maintained By: @JAsuran123</b> \n
+<b>Bot Maintained By: @Tamil_Bots</b> \n
 <b>Do /help for more...</b> \n
 """
 
@@ -12,7 +12,7 @@ class Translation(object):
     DOWNLOAD_START = "<b>Downloading To My server !! pls Wait</b>"
     UPLOAD_START = "<b>Downloading Completed Now I'm Uploading Into TG</b>"
     RCHD_TG_API_LIMIT = "Downloaded in {} seconds.\nDetected File Size: {}\nSorry WTF Do You Think! I'll Upload It?"
-    AFTER_SUCCESSFUL_UPLOAD_MSG = "**Thank you for Using Me JOin > @turborenamerprobot  ❤️**"
+    AFTER_SUCCESSFUL_UPLOAD_MSG = "**Thank you for Using Me JOin > @Tamil_Bots ❤️**"
     AFTER_SUCCESSFUL_UPLOAD_MSG_WITH_TS = "Downloaded in {} seconds.\nUploaded in {} seconds"
     NOT_AUTH_USER_TEXT = "CONTACT @JAsuran123 "
     NOT_AUTH_USER_TEXT_FILE_SIZE = "IF You Got This Message You Should Contact @JAsuran123"
@@ -34,4 +34,4 @@ class Translation(object):
 1.🔹 <b>Send me any Telegram File.</b> \n
 2.🔹 <b>Reply to that message with /rename New file name.extnsion</b> \n
 3.🔹 <b> Send A Photo to make it as permanent Thumbnail</b> \n
-4.🔹 <b>Reply to that message with /rename_video or /rename_video1 New file name.extnsion For videos</b>"""
+4.🔹 <b>Reply to that message with /rename_video New file name.extnsion For videos</b>"""
